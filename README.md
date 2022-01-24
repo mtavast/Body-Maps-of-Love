@@ -9,5 +9,6 @@ Most of the code used here was repurposed from a previous project (https://versi
 
 Nummenmaa, L., Hari, R., Hietanen, J. K., & Glerean, E. (2018). Maps of subjective feelings. Proceedings of the National Academy of Sciences, 115(37), 9198-9203. https://doi.org/10.1073/pnas.1807390115
 
+The files starting with body_* correspond to experiment 1, mind_* to experiment 2, and sim_* to experiment 3 in the manuscript, 
 
 
