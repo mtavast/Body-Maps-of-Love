@@ -1,5 +1,5 @@
 # Love
-This repository contains code for the Body Maps of Love -project.
+This repository contains analysis code for the Body Maps of Love -project.
 
 Unfortunately, due to ethical restrictions, we cannot share the individual level data. Thus, most of the results of the manuscript can't be reproduced directly using the files available in this repository. However, from the code, one can check how the results of the manuscript were produced. 
 
