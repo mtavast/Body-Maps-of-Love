@@ -126,7 +126,7 @@ set(gca,'XTick',1:length(alldimlabels))
 set(gca,'XTickLabel',alldimlabels,'XTickLabelRotation',90)
 axis square
 set(gcf,'Color','white')
-set(gcf,'Units', 'Pixels', 'OuterPosition', [0 0 1000 1000]);
+set(gcf,'Units', 'Pixels', 'OuterPosition', [0 0 1300 1000]);
 
 print(gcf, 'figs/supplement/RSA.png', '-dpng', '-r400')
 
