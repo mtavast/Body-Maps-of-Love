@@ -100,7 +100,7 @@ end
 tickfontsize = 18;
 
 figure(1)
-imagesc(rda_r,[-0.15 1]) 
+imagesc(rda_r,[min(min(rda_r)) 1]) 
 hold on
 % add a plot of stars
 for d1=1:size(mask_p,2)
