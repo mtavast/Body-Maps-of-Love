@@ -44,7 +44,7 @@ all_dm(:,:,2:7)=X1_dm;
 
 % Add distances of the body maps, we use euclidean distance
 X2_dm_1=squareform(pdist(bodydata.mean_data));
-%X2_dm_1=squareform(pdist(bodyda ta.mean_data,'spearman')); %checking results with another distance metric for revision response
+%X2_dm_1=squareform(pdist(bodydata.mean_data,'spearman')); %checking results with another distance metric for revision response
 X2_dm=X2_dm_1;
 X2=[zscore(X2_dm_1(ids))]; 
 
@@ -130,6 +130,6 @@ set(gcf,'Color','white')
 set(gcf,'Units', 'Pixels', 'OuterPosition', [0 0 1300 1000]);
 
 print(gcf, 'figs/supplement/RSA.png', '-dpng', '-r400')
-
+%print(gcf, 'figs/supplement/RSA_with_spearmans_distance.png','-dpng','-r400') % for a review response
 
 

@@ -66,33 +66,7 @@ for s=1:length(sensations)
     sens_count(s,1)=size(thisdata,2);
 end
 
-%% visualize case of using normal mean
-figure(2)
-for subdim=1:6
-    subplot(1,6,subdim)
-    imagesc(xi,1:27,distros(:,:,subdim),[0 prctile(distros(:),99)])
-    colormap(maph)
-    set(gca,'YTick',[])
-    xlabel(dim_labels{subdim})
-    hold on
-    for s=1:27
-        if(subdim==1)
-            text(-1.1,s,sensations{s},'HorizontalAlignment','right')
-        end
-        if(subdim==6)
-            text(1.1,s,sensations{s},'HorizontalAlignment','left')
-        end
-        plot(mean_data(s,subdim),s,'o','Color',0*[1 1 1])
-        plot(median_data(s,subdim),s,'x','Color',0*[1 1 1])
-    end
-    if(subdim==3)
-        title('Probability distribution functions for each item and each dimension. o = mean. x = median')
-    end
-end
-set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
-set(gcf,'color',[1 1 1]);
-export_fig -m3 'figs/supplement/mind_PDFs_and_mean_data.png'
-
+%%
 % case using z transformed means 
 figure(3)
 for subdim=1:6
@@ -277,7 +251,7 @@ set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
 print(gcf, 'figs/main/distributions_sorted.png', '-dpng', '-r500')
 exportgraphics(gcf,'figs/main/distributions_sorted.pdf','ContentType','vector')
 
-%% visualize as violin plots 
+%% visualize as violin plots
 load output/sim/sim_cluster.mat
 figure(2200)
 close
@@ -306,7 +280,7 @@ for subdim=1:6
 
     end
     if(subdim==3)
-        title('Probability distribution functions for each item and each dimension. o = mean. x = median')
+        title('Probability distribution functions for each item and each dimension')
     end
     set(gca,'YTick',[])
     xlabel(dim_labels{subdim})
@@ -319,6 +293,7 @@ for subdim=1:6
 end
 set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
 set(gcf,'color',[1 1 1]);
+
 %% case using z transformed means
 [temp emomedianZ]=sort(median_dataZ(:,3));
 
@@ -472,3 +447,42 @@ set(gcf,'color',[1 1 1]);
 print(gcf, 'figs/supplement/reliability_of_rating_tool.png', '-dpng', '-r500')
 
 disp(['Median split-half correlation value', num2str(round(median(icc), 2))])
+
+
+%% visualize case of using normal mean, new supplementary figure for revisions
+figure(2)
+
+for subdim=1:6
+    subplot(1,6,subdim)
+    imagesc(xi,1:27,distros(:,:,subdim),[0 prctile(distros(:),99)])
+    colormap(maph)
+    set(gca,'YTick',[])
+    xlabel(dim_labels{subdim}, 'FontSize',19)
+    set(gca,'FontSize', 14)
+    hold on
+    for s=1:27
+        if(subdim==1)
+            t = text(-1.1,s,sensations{s},'HorizontalAlignment','right', 'FontSize',15);
+        end
+        %if(subdim==6)
+        %    text(1.1,s,sensations{s},'HorizontalAlignment','left')
+        %end
+        plot(mean_data(s,subdim),s,'o','Color',0*[1 1 1])
+        plot(median_data(s,subdim),s,'x','Color',0*[1 1 1])
+    end
+    if(subdim==3)
+        title('                                  Probability density estimates for each item and each dimension (o = mean, x = median)', 'FontSize', 20)
+    end
+end
+set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
+set(gcf,'color',[1 1 1]);
+
+% add colorbar
+c = colorbar(gca,'Position',[0.93 0.168 0.022 0.7]);  
+c.Ticks = linspace(0,prctile(distros(:),99),12)
+set(c,'FontSize',14)
+ylabel(c, 'Density', 'FontSize',18)
+
+set(gcf,'OuterPosition',[0.475961538461538 0.341666666666667 0.74198717948718 0.6109375])
+
+print(gcf, 'figs/supplement/mind_PDFs_and_mean_data.png', '-dpng', '-r500')
