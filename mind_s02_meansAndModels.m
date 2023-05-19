@@ -471,7 +471,7 @@ for subdim=1:6
         plot(median_data(s,subdim),s,'x','Color',0*[1 1 1])
     end
     if(subdim==3)
-        title('                                  Probability density estimates for each item and each dimension (o = mean, x = median)', 'FontSize', 20)
+        title('                                  Probability density estimates for each item and each dimension', 'FontSize', 20)
     end
 end
 set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
@@ -479,9 +479,11 @@ set(gcf,'color',[1 1 1]);
 
 % add colorbar
 c = colorbar(gca,'Position',[0.93 0.168 0.022 0.7]);  
-c.Ticks = linspace(0,prctile(distros(:),99),12)
+%c.Ticks = linspace(0,prctile(distros(:),99),12)
+c.Ticks = ([0,prctile(distros(:),99)])
+c.TickLabels = ({'low', 'high'})
 set(c,'FontSize',14)
-ylabel(c, 'Density', 'FontSize',18)
+ylabel(c, 'Density (arbtrirary units)', 'FontSize',18)
 
 set(gcf,'OuterPosition',[0.475961538461538 0.341666666666667 0.74198717948718 0.6109375])
 
