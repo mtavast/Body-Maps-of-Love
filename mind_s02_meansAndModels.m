@@ -248,8 +248,9 @@ set(h,'PaperOrientation','landscape');
 set(h,'PaperUnits','normalized');
 set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
 
-print(gcf, 'figs/main/distributions_sorted.png', '-dpng', '-r500')
-exportgraphics(gcf,'figs/main/distributions_sorted.pdf','ContentType','vector')
+%print(gcf, 'figs/main/distributions_sorted.png', '-dpng', '-r500')
+print(gcf, 'figs/main/distributions_sorted.jpg', '-djpeg', '-r400') % journal requirements
+%exportgraphics(gcf,'figs/main/distributions_sorted.pdf','ContentType','vector')
 
 %% visualize as violin plots
 load output/sim/sim_cluster.mat

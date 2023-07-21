@@ -204,8 +204,9 @@ set(gcf,'Units', 'Pixels', 'OuterPosition', [0 0 850 1000]);
 
 set(gcf,'color',[1 1 1]);
 
-exportgraphics(gcf,'figs/main/mind_corrplot_subset_matlab.pdf','ContentType','vector')
-export_fig 'figs/main/mind_corrplot_subset_matlab.png';
+%exportgraphics(gcf,'figs/main/mind_corrplot_subset_matlab.pdf','ContentType','vector')
+%export_fig 'figs/main/mind_corrplot_subset_matlab.png';
+print(gcf, 'figs/main/mind_corrplot_subset_matlab.jpg', '-djpeg', '-r400') % for journal
 
 %% run a PCA and a dendrogram based on the means across subjects 3D plot
 % and varimax rotation
@@ -302,8 +303,9 @@ for d=1:6
     set(gca, 'XDir','reverse')             
     set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
     set(gcf,'color',[1 1 1]);
-    exportgraphics(gcf,['figs/main/gaussian_filtered_mean_values_mind_MDS' dim_labels{d} '.pdf'],'ContentType','vector')
-    print(gcf, ['figs/main/gaussian_filtered_mean_values_mind_MDS' dim_labels{d} '.png'], '-dpng', '-r300')
+    %exportgraphics(gcf,['figs/main/gaussian_filtered_mean_values_mind_MDS' dim_labels{d} '.pdf'],'ContentType','vector')
+    %print(gcf, ['figs/main/gaussian_filtered_mean_values_mind_MDS' dim_labels{d} '.png'], '-dpng', '-r300')
+    print(gcf, ['figs/main/gaussian_filtered_mean_values_mind_MDS' dim_labels{d} '.jpg'], '-djpeg', '-r400')
     % Uncomment below if you want to see the range of values for good colormap range
     %disp(['MAX VALUE ' num2str(max(max(testi))) ' MIN VALUE ' num2str(min(min(testi)))])
 end

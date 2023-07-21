@@ -121,7 +121,8 @@ end
 set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
 set(gcf,'color',[1 1 1]);
 
-print(gcf, ['figs/main/sim_mean_data_resorted_dbscan.png'], '-dpng', '-r300')
+%print(gcf, ['figs/main/sim_mean_data_resorted_dbscan.png'], '-dpng', '-r300')
+print(gcf, ['figs/main/sim_mean_data_resorted_dbscan.jpg'], '-djpeg', '-r400') % journal requirements
 
 %% plot MDS as a network
 
@@ -255,8 +256,9 @@ c = plot(NaN,NaN,'ok', 'MarkerFaceColor', classColors(3,:), 'MarkerEdgeColor', c
 set(hleg1,'position',[0.1 0.8 0.3 0.15]);
 
 %export_fig 
-exportgraphics(gcf,'figs/main/sim_network_mds..pdf','ContentType','vector')
-print(gcf, ['figs/main/sim_network_mds.png'], '-dpng', '-r500')
+%exportgraphics(gcf,'figs/main/sim_network_mds..pdf','ContentType','vector')
+%print(gcf, ['figs/main/sim_network_mds.png'], '-dpng', '-r500')
+print(gcf, ['figs/main/sim_network_mds.jpg'], '-djpeg', '-r400')
 
 %% Plot HC and K-Means
 % Now the chosen clustering is based on the same cluster size as in
