@@ -130,7 +130,9 @@ set(gcf,'Color','white')
 set(gcf,'Units', 'Pixels', 'OuterPosition', [0 0 1300 1000]);
 
 %print(gcf, 'figs/supplement/RSA.png', '-dpng', '-r400')
-print(gcf, 'figs/supplement/RSA.jpg', '-djpeg', '-r400')
+%print(gcf, 'figs/supplement/RSA.jpg', '-djpeg', '-r400')
+print(gcf, 'figs/supplement/RSA.tif', '-dtiffn', '-r400') % for journal
+print(gcf, 'figs/supplement/RSA_.tif', '-dtiff', '-r400') % for journal
 %print(gcf, 'figs/supplement/RSA_with_spearmans_distance.png','-dpng','-r400') % for a review response
 
 

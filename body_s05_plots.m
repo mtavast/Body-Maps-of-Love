@@ -195,7 +195,9 @@ set(gcf,'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
 
 %exportgraphics(gcf,'figs/main/sensations_body.pdf','ContentType','vector')
 %print(gcf, 'figs/main/sensations_body.png', '-dpng', '-r500')
-print(gcf, 'figs/main/sensations_body.jpg', '-djpeg', '-r400') % journal format
+%print(gcf, 'figs/main/sensations_body.jpg', '-djpeg', '-r400') % journal format
+print(gcf, 'figs/main/sensations_body.tif', '-dtiffn', '-r400') % journal format
+print(gcf, 'figs/main/sensations_body_.tif', '-dtiff', '-r400') % journal format
 %% Set up for descriptive plots
 % Loads each subjects data directly
 

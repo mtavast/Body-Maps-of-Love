@@ -111,7 +111,7 @@ for n=1:N^2
         end
         [fi]=ksdensity(data(find(sim.sim_cluster.DBSCAN.class_from_mean_data<=0),dim1),xi); % between clusters
         plot(xi,scaling_factor*fi,'Color',[0 0 0],'LineWIdth',1) 
-        disp(['SCALED INTEGRAL ' num2str(trapz(xi,scaling_factor*fi))])
+        %disp(['SCALED INTEGRAL ' num2str(trapz(xi,scaling_factor*fi))])
         sim_clu=3; 
         if(n==1) % between clusters text and line
             text(-5+20.5,29-DF*(sim_clu),'—','FontSize',20,'Color',[0 0 0],'FontWeight','bold')
@@ -206,8 +206,9 @@ set(gcf,'color',[1 1 1]);
 
 %exportgraphics(gcf,'figs/main/mind_corrplot_subset_matlab.pdf','ContentType','vector')
 %export_fig 'figs/main/mind_corrplot_subset_matlab.png';
-print(gcf, 'figs/main/mind_corrplot_subset_matlab.jpg', '-djpeg', '-r400') % for journal
-
+%print(gcf, 'figs/main/mind_corrplot_subset_matlab.jpg', '-djpeg', '-r400') % for journal
+print(gcf, 'figs/main/mind_corrplot_subset_matlab.tif', '-dtiffn', '-r400') % for journal
+print(gcf, 'figs/main/mind_corrplot_subset_matlab_.tif', '-dtiff', '-r400') % for journal
 %% run a PCA and a dendrogram based on the means across subjects 3D plot
 % and varimax rotation
 pcadata=[mean_data];
