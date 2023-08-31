@@ -7,6 +7,6 @@ Ethical restrictions do not apply to group-level data, and they are made availab
 
 mind_mds.mat -file contains the means and medians of the dimension ratings (based on both the raw ratings and Z transformed ratings), sim_mds.mat -file contains the mean distance matrix from experiment 3, and the bspm_ttest.mat -file contains the group level body maps.
 
-Most of the code used here was repurposed from a previous project (https://version.aalto.fi/gitlab/eglerean/sensations/-/tree/master/) following MIT license. Thus, if you reuse the code, please cite:
+Most of the code used here was repurposed from a previous project (https://version.aalto.fi/gitlab/eglerean/sensations/-/tree/master/) following MIT license, and published here as it is with the permission of Enrico Glerean. If you reuse the code, please cite:
 
 Nummenmaa, L., Hari, R., Hietanen, J. K., & Glerean, E. (2018). Maps of subjective feelings. Proceedings of the National Academy of Sciences, 115(37), 9198-9203. https://doi.org/10.1073/pnas.1807390115

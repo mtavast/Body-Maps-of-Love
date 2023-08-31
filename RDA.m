@@ -76,7 +76,7 @@ for d1=1:size(tempdata,2)
         mat2=zeros(SS);
         mat2(find(triu(ones(SS),1)))=tempdata(idsOI,d2);
         mat2=mat2+mat2';   
-        rng(0); % same permutations for each pair of dimensions
+        rng(0); % only sets the seed for parfor loop if number of workers = 1, small variation might be seen otherwise
         [rtemp ptemp]=bramila_mantel(mat1,mat2,5000,'spearman')
         rda_r(d1,d2)=rtemp;     % input the result of the mantel test
         rda_p(d1,d2)=ptemp;
